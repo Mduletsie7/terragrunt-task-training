@@ -14,6 +14,9 @@ __pycache__/*
 */.ipynb_checkpoints/*
 .DS_Store
 
+# NodeJS Modules
+node_modules
+
 # Project files
 .ropeproject
 .project
