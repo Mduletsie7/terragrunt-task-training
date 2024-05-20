@@ -28,12 +28,13 @@ jobs:
         echo $PWD
 
     - name: Install dependencies
-      run: npm install --force
+      run: 
+        cd app/
+        npm install --force
       working-directory: ./app/
 
     - name: Build
       run: 
-        cd app/
         npm run build
 
 
