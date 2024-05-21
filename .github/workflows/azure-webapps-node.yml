@@ -1,5 +1,11 @@
 name: Azure Deployment
 
+# Declare environment variables
+env:
+  AZURE_WEBAPP_NAME: wa-dev-eastus-tfstate    # set this to your application's name
+  AZURE_WEBAPP_PACKAGE_PATH: './app'      # set this to the path to your web app project, defaults to the repository root
+
+
 on:
   push:
     branches:
@@ -13,7 +19,7 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v3
       with:
-        path: ./app/
+        path: .
 
     - name: Use Node.js
       uses: actions/setup-node@v3
@@ -29,7 +35,6 @@ jobs:
 
     - name: Install dependencies
       run:
-        cd ./app/ 
         npm install --force
       working-directory: .
 
