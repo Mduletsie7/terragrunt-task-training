@@ -44,6 +44,9 @@ locals {
 
     short_env = substr(local.environment, 0, 4)
 
+# Use map to capture resource group, storage account, & container in azure
+# that will be used to configure remote state on terragrunt.hcl file 
+# terragrunt.hcl -> Line 9 
     account_map = {
         dev = {
             eastus = {

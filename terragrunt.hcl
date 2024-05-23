@@ -4,6 +4,8 @@ locals {
     tf_root = trimprefix(path_relative_to_include(), get_repo_root())
 }
 
+# Configure Terraform to use container in Azure storage account for remote state management
+# Setup config by referencing locals variables from map in common.hcl file || Starting on line 47
 remote_state {
   backend = "azurerm"
   generate = {
